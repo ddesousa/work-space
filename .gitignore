@@ -1,5 +1,5 @@
 scripts/set_environment.sh
+scripts/.projects/lumerical-products.sh
 projects/sandbox
 projects/lumerical-products
-projects/lumerical-QA
 projects/analytics
