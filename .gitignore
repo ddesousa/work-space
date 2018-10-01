@@ -1,6 +1,5 @@
-Projects/.metadata
-Scripts/set_environment.sh
-Projects/sandbox
-Projects/lumerical-products
-Projects/lumerical-QA
-Projects/analytics
+scripts/set_environment.sh
+projects/sandbox
+projects/lumerical-products
+projects/lumerical-QA
+projects/analytics

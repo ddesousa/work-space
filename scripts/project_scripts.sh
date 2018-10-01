@@ -2,8 +2,6 @@
 
 PROJECT_SCRIPT=
 
-# REVISIT (ddesousa): Mention of lumerical, these scripts need to be company
-# company-agnostic
 case $PROJECT in
     lumerical-products)
         PROJECT_SCRIPT=lumerical-products.sh
