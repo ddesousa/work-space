@@ -5,7 +5,7 @@ SETLOCAL
 set TOOLS_DRIVE=""
 
 REM REVISIT (ddesousa): Need to pull this value out of the environment rather than hard-coding it
-set TOOLS_FOLDER=\\absfs3\DEV\Tools
+set TOOLS_FOLDER=\\<Add Location Of Tools>\DEV\Tools
 set BOOTSTRAP_TEMP_FOLDER=%TEMP%\DevEnvironmentBootStrap
 
 REM The version number in wget makes this code brittle
