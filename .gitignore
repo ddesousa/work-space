@@ -1,15 +1,6 @@
 Projects/.metadata
-Scripts/SetEnvironment.sh
+Scripts/set_environment.sh
 Projects/sandbox
-Projects/geometry-kernel
 Projects/lumerical-products
-Projects/lumerical-ide2018
-Projects/lumerical-products-dev
-Projects/lumerical-products-master
-Projects/lumerical-shareddata
 Projects/lumerical-QA
-Projects/lumerical-QA-interop
 Projects/analytics
-Projects/python3_env
-Projects/python_env
-Projects/eclipse-workspace
