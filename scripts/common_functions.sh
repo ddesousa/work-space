@@ -12,7 +12,7 @@ function ReadProjectFile()
         WORKSPACE=${@: -1}
     fi
     exec 10<&0
-    exec < $WORKSPACE/Projects/.projects
+    exec < $WORKSPACE/projects/.projects
     while read LINE; do
         PROJECT=`echo $LINE | cut -d ',' -f1`
         if [ "$PROJECT" == "" ]; then
@@ -78,9 +78,9 @@ function Checkout()
     REPO_LOC=$4
     WORKSPACE=$5
     if [ "$PROJECT_TO_CHECKOUT" == "$PROJECT" ]; then
-        if [ ! -e $WORKSPACE/Projects/$PROJECT_TO_CHECKOUT ]; then
+        if [ ! -e $WORKSPACE/projects/$PROJECT_TO_CHECKOUT ]; then
             local REPO=`eval echo $REPO_LOC`
-            git clone $REPO $WORKSPACE/Projects/$PROJECT_TO_CHECKOUT
+            git clone $REPO $WORKSPACE/projects/$PROJECT_TO_CHECKOUT
         else
             echo "Error: $PROJECT already checked-out"
             return 1
@@ -134,12 +134,12 @@ function CreateEnvironment()
         if [ -e $MY_DEV_PROJECTS/$PROJECT_TO_SWITCH ]; then
             PROJECT_SCRIPT=$3
             REPO_LOC=$4
-            echo "#!/bin/bash" > $WORKSPACE/Scripts/set_environment.sh
-            echo "export PROJECT=$PROJECT" >>  $WORKSPACE/Scripts/set_environment.sh
-            echo "echo Loading $PROJECT" >> $WORKSPACE/Scripts/set_environment.sh
+            echo "#!/bin/bash" > $WORKSPACE/scripts/set_environment.sh
+            echo "export PROJECT=$PROJECT" >>  $WORKSPACE/scripts/set_environment.sh
+            echo "echo Loading $PROJECT" >> $WORKSPACE/scripts/set_environment.sh
             if [ ! "$PROJECT_SCRIPT" == "" ]; then
                 if [ -f $MY_DEV_PROJECTS/$PROJECT/$PROJECT_SCRIPT ]; then
-                    echo "source $MY_DEV_PROJECTS/$PROJECT/$PROJECT_SCRIPT" >> $WORKSPACE/Scripts/set_environment.sh
+                    echo "source $MY_DEV_PROJECTS/$PROJECT/$PROJECT_SCRIPT" >> $WORKSPACE/scripts/set_environment.sh
                 fi
             fi
             ResetProject
@@ -151,14 +151,14 @@ function CreateEnvironment()
 }
 function ResetProject()
 {
-    cygstart /bin/mintty -;exit
+    echo "To be implemented"
 }
 function Gvim()
 {
     if [ "$OSTYPE" == "cygwin" ]; then
-        local VIM_PROFILE=`cygpath -w $MY_DEV_WORKSPACE/Config/Vim/Profiles/_vimrc.$USER`
+        local VIM_PROFILE=`cygpath -w $MY_DEV_WORKSPACE/config/vim/profiles/_vimrc.$USER`
     else
-        local VIM_PROFILE=$MY_DEV_WORKSPACE/Config/Vim/Profiles/_vimrc.$USER
+        local VIM_PROFILE=$MY_DEV_WORKSPACE/config/vim/profiles/_vimrc.$USER
     fi
     if [ ! "$DEV_EDITOR" == "" ]; then
         VIM_PROFILE_WITH_SLASHES=$(echo $VIM_PROFILE | sed -e 's/\\/\\\\/g')
