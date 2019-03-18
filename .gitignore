@@ -1,5 +1,3 @@
 scripts/set_environment.sh
 scripts/.projects/l*.sh
-projects/sandbox
-projects/l*
-projects/analytics
+projects/*

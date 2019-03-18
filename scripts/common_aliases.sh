@@ -18,6 +18,7 @@ alias grep='grep --color=always'
 if [ "$OSTYPE" == "cygwin" ]; then
     alias gvim='Gvim'
     alias cmake='/cygdrive/c/Program\ Files\ \(x86\)/CMake/bin/cmake.exe'
+    alias cpack='/cygdrive/c/Program\ Files\ \(x86\)/CMake/bin/cpack.exe'
     alias python='dos Python'
     alias start='cygstart'
 fi
