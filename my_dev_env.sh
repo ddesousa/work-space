@@ -9,6 +9,7 @@ export MY_DEV_PROJECTS MY_DEV_SCRIPTS
 eval $(ssh-agent -s)
 
 ssh-add ~/.ssh/github.key
+ssh-add ~/.ssh/gitlab
 
 echo "*******************My Personal Development Environment***************"
 
