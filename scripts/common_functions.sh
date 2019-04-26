@@ -151,7 +151,7 @@ function CreateEnvironment()
 }
 function ResetProject()
 {
-    echo "To be implemented"
+    cygstart /bin/mintty -;exit
 }
 function Gvim()
 {
