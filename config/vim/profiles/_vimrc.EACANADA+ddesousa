@@ -16,7 +16,7 @@ set fileformat=unix
 :inoremap <C-tab> :tabnext<CR>
 :inoremap <C-t> :tabnew<CR>
 
-:nnoremap <esc> :set hlsearch!<CR>
+:nnoremap <F3> :set hlsearch!<CR>
 
 highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
 set lines=60
@@ -26,7 +26,6 @@ set background=dark
 set nobackup
 set nowritebackup
 set noswapfile
-set noundofile
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -53,26 +52,6 @@ set backupdir=~/.vim/_backup    " where to put backup files.
 set directory=~/.vim/_temp      " where to put swap files.
 set guioptions-=T
 
-" Windows:
-set rtp+=$HOME/vimfiles/bundle/Vundle.vim
-call vundle#begin('$HOME/vimfiles/bundle/')
-
-" Required
-Plugin 'VundleVim/Vundle.vim'
-
-" Other plugins
-Plugin 'scrooloose/nerdtree'
-
-call vundle#end()
-
-map <C-n> :NERDTreeToggle<CR>
-
-nnoremap <C-S-tab> 	:tabprevious<CR>
-nnoremap <C-tab>	:tabnext<CR>
-nnoremap <C-t>		:tabnew<CR>
-inoremap <C-S-tab>	<Esc>:tabprevious<CR>i
-inoremap <C-tab>	<Esc>:tabnext<CR>i
-inoremap <C-t>		<Esc>:tabnew<CR>
-
+" Syntax includes
+au Bufread,BufNewFile *.feature set filetype=gherkin
 syntax on
-filetype plugin indent on
