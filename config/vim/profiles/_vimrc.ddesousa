@@ -51,6 +51,7 @@ set listchars+=precedes:<         " The character to show in the last column whe
 set backupdir=~/.vim/_backup    " where to put backup files.
 set directory=~/.vim/_temp      " where to put swap files.
 set guioptions-=T
+set noundofile
 
 " Syntax includes
 au Bufread,BufNewFile *.feature set filetype=gherkin
